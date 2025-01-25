@@ -3,10 +3,6 @@ extends Node2D
 @onready var bubble = preload("res://scenes/bubble.tscn")
 @onready var screenSize = get_viewport().get_visible_rect().size
 
-var MIN_SPAWN_X = 1
-var MAX_SPAWN_X = 1000
-var MIN_SPAWN_Y = 1
-var MAX_SPAWN_Y = 1000
 
 var MIN_BUBBLE_SCALE = 0.5
 var MAX_BUBBLE_SCALE = 2
@@ -22,7 +18,8 @@ func _on_timer_timeout() -> void:
 		return
 	var bub = bubble.instantiate()
 	bub.position.x = randf_range(0, screenSize.x)
-	bub.position.y = randf_range(0, screenSize.y)
+	# Always spawn on bottom half
+	bub.position.y = randf_range(screenSize.y/2, screenSize.y)
 	bub.scale *= randf_range(MIN_BUBBLE_SCALE, MAX_BUBBLE_SCALE)
 	bub.connect("player_popped", _on_player_pop_bubble)
 	num_bubbles += 1
