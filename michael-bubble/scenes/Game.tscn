@@ -22,9 +22,10 @@ offset_right = 1156.0
 offset_bottom = 655.0
 
 [node name="Player" parent="." instance=ExtResource("3_8o8ob")]
+z_index = 5
 position = Vector2(-1.51587, 12.7047)
 
-[node name="Area2D" parent="." instance=ExtResource("5_6oyh1")]
+[node name="Tigerfish" parent="." instance=ExtResource("5_6oyh1")]
 position = Vector2(-225, 287)
 
 [connection signal="oxygen_bar_increase" from="GameManager" to="GameManager/OxygenBar" method="_on_game_manager_oxygen_bar_increase"]
