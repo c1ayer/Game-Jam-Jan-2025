@@ -14,3 +14,7 @@ func _process(delta: float) -> void:
 func _on_bubble_spawner_increase_oxygen() -> void:
 	emit_signal("oxygen_bar_increase")
 	pass # Replace with function body.
+
+
+func _on_oxygen_bar_oxygen_death() -> void:
+	pass # Replace with function body.
