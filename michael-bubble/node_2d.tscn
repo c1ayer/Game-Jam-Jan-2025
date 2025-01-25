@@ -5,3 +5,5 @@
 [node name="GameManager" type="Node2D" parent="."]
 
 [node name="Player" type="Node2D" parent="."]
+
+[node name="Harpoon" type="Node2D" parent="Player"]
