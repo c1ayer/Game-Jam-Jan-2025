@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_hm51x"]
 [ext_resource type="PackedScene" uid="uid://dc26m67p27iqs" path="res://scenes/bubble_spawner.tscn" id="2_o7f3j"]
 [ext_resource type="PackedScene" uid="uid://cx4ksnybq2mw0" path="res://scenes/player.tscn" id="3_8o8ob"]
-[ext_resource type="PackedScene" uid="uid://rkn2k8tuy0jw" path="res://scenes/water_testing_facility.tscn" id="4_mhf6i"]
+[ext_resource type="PackedScene" uid="uid://cqsxdd5gnrgrt" path="res://scenes/oxygen_bar.tscn" id="4_g3q1a"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(0, -4)
@@ -12,9 +12,16 @@ position = Vector2(0, -4)
 unique_name_in_owner = true
 script = ExtResource("1_hm51x")
 
-[node name="BubbleSpawner" parent="." instance=ExtResource("2_o7f3j")]
+[node name="BubbleSpawner" parent="GameManager" instance=ExtResource("2_o7f3j")]
+
+[node name="OxygenBar" parent="GameManager" instance=ExtResource("4_g3q1a")]
+offset_left = 1156.0
+offset_top = 655.0
+offset_right = 1156.0
+offset_bottom = 655.0
 
 [node name="Player" parent="." instance=ExtResource("3_8o8ob")]
 position = Vector2(-1.51587, 12.7047)
 
-[node name="WaterTestingFacility" parent="." instance=ExtResource("4_mhf6i")]
+[connection signal="oxygen_bar_increase" from="GameManager" to="GameManager/OxygenBar" method="_on_game_manager_oxygen_bar_increase"]
+[connection signal="increase_oxygen" from="GameManager/BubbleSpawner" to="GameManager" method="_on_bubble_spawner_increase_oxygen"]
