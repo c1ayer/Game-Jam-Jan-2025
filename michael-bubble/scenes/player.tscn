@@ -1,21 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://caa51017re5wo"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_yn562"]
-[ext_resource type="Texture2D" uid="uid://bkd6gsii3noc8" path="res://assets/temp scuba diver.png" id="2_oda7a"]
+[ext_resource type="Script" path="res://scenes/character_body_2d.gd" id="1_4o0gx"]
+[ext_resource type="Texture2D" uid="uid://cblqllw6w3y5n" path="res://assets/diver.png" id="2_ebe4k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvyj5"]
-size = Vector2(121, 66)
+size = Vector2(159.5, 87)
 
 [node name="Player" type="Node2D"]
+position = Vector2(87, 64)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("1_yn562")
+script = ExtResource("1_4o0gx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-0.5, -4)
+position = Vector2(30.25, -1.5)
 shape = SubResource("RectangleShape2D_mvyj5")
 
-[node name="temp scuba diver" type="Sprite2D" parent="."]
-position = Vector2(-5, -3)
-scale = Vector2(0.12598, 0.136831)
-texture = ExtResource("2_oda7a")
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(31, -1)
+scale = Vector2(0.153922, 0.17284)
+texture = ExtResource("2_ebe4k")
