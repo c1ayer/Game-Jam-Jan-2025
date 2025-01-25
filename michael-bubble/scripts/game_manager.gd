@@ -8,13 +8,10 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#decrease oxygen
 	pass
 
 func _on_bubble_spawner_increase_oxygen() -> void:
 	emit_signal("oxygen_bar_increase")
-	pass # Replace with function body.
-
 
 func _on_oxygen_bar_oxygen_death() -> void:
 	pass # Replace with function body.
