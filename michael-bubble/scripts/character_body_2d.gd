@@ -5,12 +5,10 @@ extends CharacterBody2D
 @export var deceleration = 200  # Rate at which the velocity decreases
 @export var forward_multiplier = 1.2  # Speed multiplier for moving forward
 @export var backward_multiplier = 0.6  # Speed multiplier for moving backward
-@export var harpoon_scene: PackedScene  # Drag your Harpoon.tscn here
+@export var harpoon_scene: PackedScene  # Harpoon.tscn here
 
 var rotation_direction = 0
 var harpoon_instance = null  # Store a reference to the harpoon
-var is_pulling = false
-var pull_target_position = Vector2.ZERO  # Target position for pulling
 
 func get_input(delta):
 	rotation_direction = Input.get_axis("move_left", "move_right")
@@ -34,32 +32,18 @@ func shoot_harpoon():
 			return
 		
 		# Instance the harpoon scene and add it to the scene tree
-		harpoon_instance = harpoon_scene.instance()
+		harpoon_instance = harpoon_scene.instantiate()
 		if harpoon_instance:
-			harpoon_instance.initialize(global_position, transform.x)  # Set its position and direction
-			get_tree().root.add_child(harpoon_instance)  # Add to the root of the scene tree
-			harpoon_instance.connect("attached", self, "_on_harpoon_attached")
+			# Set the position and direction of the harpoon based on the diver's current position and direction
+			harpoon_instance.initialize(global_position, transform.x)  # Initialize the harpoon with the correct position and direction
+			get_tree().root.add_child(harpoon_instance)  # Add it to the scene tree
 		else:
 			print("Error: Failed to instance harpoon scene!")
 
-func _on_harpoon_attached(hit_body):
-	is_pulling = true
-	pull_target_position = hit_body.global_position  # Set the target position
-	harpoon_instance = null  # Reset the harpoon instance reference
-
 func _physics_process(delta):
-	if is_pulling:
-		# Pull the diver toward the target position
-		var pull_vector = (pull_target_position - global_position).normalized()
-		velocity = pull_vector * speed
-
-		if global_position.distance_to(pull_target_position) < 10:  # Stop pulling when close enough
-			is_pulling = false
-			velocity = Vector2.ZERO  # Stop movement
-	else:
-		get_input(delta)
-		rotation += rotation_direction * rotation_speed * delta
-		move_and_slide()
+	get_input(delta)
+	rotation += rotation_direction * rotation_speed * delta
+	move_and_slide()
 
 func _input(event):
 	if event.is_action_pressed("shoot"):  # Bind this action in the Input Map
