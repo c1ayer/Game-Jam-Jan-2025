@@ -7,6 +7,7 @@
 size = Vector2(202.25, 198.5)
 
 [node name="Bubble" type="Area2D"]
+collision_mask = 2
 script = ExtResource("1_o1d81")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -17,3 +18,5 @@ shape = SubResource("RectangleShape2D_4llsh")
 position = Vector2(6.10352e-05, -0.999992)
 scale = Vector2(0.0516744, 0.0516744)
 texture = ExtResource("1_ndv4v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

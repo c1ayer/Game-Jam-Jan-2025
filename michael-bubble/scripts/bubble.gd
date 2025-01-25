@@ -7,3 +7,4 @@ func _on_body_entered(body):
 	# TODO: Trigger Oxygen Bump if Body is Player
 	# TODO: Play Animation and Sound
 	queue_free()
+	
