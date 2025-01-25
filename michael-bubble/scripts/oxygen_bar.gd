@@ -2,7 +2,7 @@ extends Control
 
 # Constants can be updated to variable
 var MAX_OXYGEN = 100
-var OXYGEN_DEPLETE_RATE = 1
+var OXYGEN_DEPLETE_RATE = 20
 var OXYGEN_INCREASE_RATE = 20
 # Variables
 var current_oxygen = MAX_OXYGEN
