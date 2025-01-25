@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://6wtou0qqkt7j"]
+
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_hm51x"]
+
+[node name="Game" type="Node2D"]
+position = Vector2(0, -4)
+
+[node name="GameManager" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_hm51x")
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="Harpoon" type="Node2D" parent="Player"]
