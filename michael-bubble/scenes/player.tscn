@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 [gd_scene load_steps=5 format=3 uid="uid://caa51017re5wo"]
-=======
-[gd_scene load_steps=4 format=3 uid="uid://cx4ksnybq2mw0"]
->>>>>>> main
 
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="1_4o0gx"]
 [ext_resource type="Texture2D" uid="uid://cblqllw6w3y5n" path="res://assets/diver.png" id="2_ebe4k"]
