@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://rkn2k8tuy0jw"]
 
-[ext_resource type="Script" path="res://water_testing_facility.gd" id="1_cwv0m"]
-[ext_resource type="PackedScene" uid="uid://dntvlhkw1cvdy" path="res://water.tscn" id="1_lrp3d"]
+[ext_resource type="Script" path="res://scripts/water_testing_facility.gd" id="1_cwv0m"]
+[ext_resource type="PackedScene" uid="uid://dntvlhkw1cvdy" path="res://scenes/water.tscn" id="1_lrp3d"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7m3gh"]
 distance = -650.0

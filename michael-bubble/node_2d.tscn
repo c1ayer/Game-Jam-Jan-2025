@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://cmsafrcj8vnb6"]
-
-[node name="Game" type="Node2D"]
-
-[node name="GameManager" type="Node2D" parent="."]
-
-[node name="Player" type="Node2D" parent="."]
-
-[node name="Harpoon" type="Node2D" parent="Player"]
