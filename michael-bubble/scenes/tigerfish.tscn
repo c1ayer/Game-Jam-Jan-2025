@@ -9,10 +9,10 @@ size = Vector2(280, 96)
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_bq8ct")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_dwjts")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_x6c6p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_dwjts")
 
 [node name="Timer" type="Timer" parent="."]
