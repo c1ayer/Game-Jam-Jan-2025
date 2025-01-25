@@ -4,17 +4,16 @@
 [ext_resource type="Script" path="res://scripts/bubble.gd" id="1_o1d81"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4llsh"]
-size = Vector2(493, 478)
+size = Vector2(202.25, 198.5)
 
 [node name="Bubble" type="Area2D"]
-position = Vector2(3, 3)
 script = ExtResource("1_o1d81")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-6, 1)
+position = Vector2(-0.125, -3.75)
 shape = SubResource("RectangleShape2D_4llsh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-6, -8)
-scale = Vector2(0.122344, 0.122344)
+position = Vector2(6.10352e-05, -0.999992)
+scale = Vector2(0.0516744, 0.0516744)
 texture = ExtResource("1_ndv4v")
