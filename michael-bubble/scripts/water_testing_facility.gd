@@ -11,7 +11,7 @@ var densities = []
 func _ready():
 	var rowsize = 20
 	var spacing = 50
-	var water_scene = preload("res://water.tscn")
+	var water_scene = preload("res://scenes/water.tscn")
 	densities.resize(number_of_water)
 	
 	for i in number_of_water:

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk65vxcc6miej"]
+
+[ext_resource type="Script" path="res://scripts/bubble.gd" id="1_o1d81"]
+[ext_resource type="Texture2D" uid="uid://tbeiw0r5ci3d" path="res://assets/bubble.png" id="2_mpoph"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4llsh"]
+size = Vector2(20, 19)
+
+[node name="Bubble" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_o1d81")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_4llsh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6.10352e-05, -0.999992)
+scale = Vector2(0.0516744, 0.0516744)
+texture = ExtResource("2_mpoph")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
