@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dmms2kjer0xjp" path="res://assets/O2-gui-bar.png" id="2_670se"]
 
 [node name="OxygenBar" type="Control"]
+z_index = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
