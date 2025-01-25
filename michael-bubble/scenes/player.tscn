@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://caa51017re5wo"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_yn562"]
+[ext_resource type="Texture2D" uid="uid://bkd6gsii3noc8" path="res://assets/temp scuba diver.png" id="2_oda7a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvyj5"]
+size = Vector2(121, 66)
+
+[node name="Player" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_yn562")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-0.5, -4)
+shape = SubResource("RectangleShape2D_mvyj5")
+
+[node name="temp scuba diver" type="Sprite2D" parent="."]
+position = Vector2(-5, -3)
+scale = Vector2(0.12598, 0.136831)
+texture = ExtResource("2_oda7a")
