@@ -1,7 +1,12 @@
+<<<<<<< HEAD
+[gd_scene load_steps=5 format=3 uid="uid://caa51017re5wo"]
+=======
 [gd_scene load_steps=4 format=3 uid="uid://cx4ksnybq2mw0"]
+>>>>>>> main
 
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="1_4o0gx"]
 [ext_resource type="Texture2D" uid="uid://cblqllw6w3y5n" path="res://assets/diver.png" id="2_ebe4k"]
+[ext_resource type="PackedScene" uid="uid://b1m18gkavx7s3" path="res://scenes/harpoon.tscn" id="3_8hnll"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qg0bh"]
 radius = 22.0
@@ -23,3 +28,6 @@ shape = SubResource("CapsuleShape2D_qg0bh")
 position = Vector2(31, -1)
 scale = Vector2(0.153922, 0.17284)
 texture = ExtResource("2_ebe4k")
+
+[node name="Harpoon" parent="." instance=ExtResource("3_8hnll")]
+position = Vector2(46, -36)
