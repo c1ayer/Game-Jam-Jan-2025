@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@export var speed = 300  #play around with speed for balance
-@export var rotation_speed = 3  #play around with rotation speed for balance
+@export var speed = 350  #play around with speed for balance
+@export var rotation_speed = 4  #play around with rotation speed for balance
 @export var deceleration = 200  # Rate at which the velocity decreases
 @export var forward_multiplier = 1.2  # Speed multiplier for moving forward
 @export var backward_multiplier = 0.6  # Speed multiplier for moving backward
