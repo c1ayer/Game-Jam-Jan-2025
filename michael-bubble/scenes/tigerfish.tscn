@@ -7,10 +7,15 @@
 size = Vector2(278, 46)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = 2
+z_as_relative = false
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_uju14")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_dwjts")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_as_relative = false
 shape = SubResource("RectangleShape2D_4u5j8")

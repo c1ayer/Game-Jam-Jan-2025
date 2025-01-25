@@ -30,3 +30,4 @@ position = Vector2(579, 406)
 
 [connection signal="oxygen_bar_increase" from="GameManager" to="GameManager/OxygenBar" method="_on_game_manager_oxygen_bar_increase"]
 [connection signal="increase_oxygen" from="GameManager/BubbleSpawner" to="GameManager" method="_on_bubble_spawner_increase_oxygen"]
+[connection signal="oxygen_death" from="GameManager/OxygenBar" to="GameManager" method="_on_oxygen_bar_oxygen_death"]

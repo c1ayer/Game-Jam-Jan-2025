@@ -12,7 +12,10 @@ height = 96.0
 position = Vector2(87, 64)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+z_index = 2
+z_as_relative = false
 collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_4o0gx")
 
 [node name="Harpoon" parent="CharacterBody2D" instance=ExtResource("3_8hnll")]
