@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://caa51017re5wo"]
+[gd_scene load_steps=6 format=3 uid="uid://caa51017re5wo"]
 
-[ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="1_4o0gx"]
+[ext_resource type="Script" path="res://scripts/diver.gd" id="1_6wqe2"]
 [ext_resource type="Texture2D" uid="uid://cblqllw6w3y5n" path="res://assets/diver.png" id="2_ebe4k"]
 [ext_resource type="PackedScene" uid="uid://b1m18gkavx7s3" path="res://scenes/harpoon.tscn" id="3_8hnll"]
+[ext_resource type="Texture2D" uid="uid://cdn1e7gamqgdm" path="res://assets/t_flashlightpattern.png" id="4_qxxld"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qg0bh"]
 radius = 22.0
@@ -16,7 +17,8 @@ z_index = 2
 z_as_relative = false
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_4o0gx")
+script = ExtResource("1_6wqe2")
+harpoon_scene = ExtResource("3_8hnll")
 
 [node name="Harpoon" parent="CharacterBody2D" instance=ExtResource("3_8hnll")]
 position = Vector2(31, -29)
@@ -30,3 +32,13 @@ shape = SubResource("CapsuleShape2D_qg0bh")
 position = Vector2(30, -1)
 scale = Vector2(0.153922, 0.17284)
 texture = ExtResource("2_ebe4k")
+
+[node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D"]
+position = Vector2(56, -6)
+shadow_enabled = true
+shadow_color = Color(0.0392157, 0.0392157, 0.0392157, 1)
+texture = ExtResource("4_qxxld")
+texture_scale = 0.2
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(56, -6)
