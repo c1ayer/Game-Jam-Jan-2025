@@ -1,12 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://6wtou0qqkt7j"]
+[gd_scene load_steps=13 format=3 uid="uid://6wtou0qqkt7j"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_hm51x"]
 [ext_resource type="PackedScene" uid="uid://dc26m67p27iqs" path="res://scenes/bubble_spawner.tscn" id="2_o7f3j"]
 [ext_resource type="PackedScene" uid="uid://caa51017re5wo" path="res://scenes/player.tscn" id="3_8o8ob"]
 [ext_resource type="PackedScene" uid="uid://b8b2x1xy4paxw" path="res://scenes/fish_spawner.tscn" id="4_ai11x"]
 [ext_resource type="PackedScene" uid="uid://cqsxdd5gnrgrt" path="res://scenes/oxygen_bar.tscn" id="4_g3q1a"]
+[ext_resource type="AudioStream" uid="uid://bj3jqlqp3jwy3" path="res://assets/pop1.wav" id="5_utv62"]
 [ext_resource type="PackedScene" uid="uid://c8voecujjmqx0" path="res://scenes/tile_map.tscn" id="6_552sb"]
+[ext_resource type="AudioStream" uid="uid://bm6k0nhcffaye" path="res://assets/pop2.wav" id="6_jgji1"]
+[ext_resource type="AudioStream" uid="uid://bceo4gwoqa5g0" path="res://assets/bite.wav" id="7_5m1pj"]
 [ext_resource type="AudioStream" uid="uid://bf0kawms2fpbf" path="res://assets/bubbledemo.mp3" id="7_iage2"]
+[ext_resource type="AudioStream" uid="uid://brvok5nyv1bk3" path="res://assets/Bite2.wav" id="8_uwj7f"]
+[ext_resource type="AudioStream" uid="uid://hnao4cwtlfvu" path="res://assets/deathScream.wav" id="9_6vw5s"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(0, -4)
@@ -25,7 +30,23 @@ visibility_layer = 2
 
 [node name="fish_spawner" parent="GameManager" instance=ExtResource("4_ai11x")]
 
+[node name="PopSound" type="AudioStreamPlayer" parent="GameManager"]
+stream = ExtResource("5_utv62")
+
+[node name="PopSound2" type="AudioStreamPlayer" parent="GameManager"]
+stream = ExtResource("6_jgji1")
+
+[node name="BiteSound" type="AudioStreamPlayer" parent="GameManager"]
+stream = ExtResource("7_5m1pj")
+
+[node name="BiteSound2" type="AudioStreamPlayer" parent="GameManager"]
+stream = ExtResource("8_uwj7f")
+
+[node name="DeathScream" type="AudioStreamPlayer" parent="GameManager"]
+stream = ExtResource("9_6vw5s")
+
 [node name="Player" parent="." instance=ExtResource("3_8o8ob")]
+unique_name_in_owner = true
 z_index = 5
 position = Vector2(-1.51587, 12.7047)
 

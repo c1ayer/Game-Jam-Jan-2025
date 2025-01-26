@@ -22,9 +22,16 @@ func _physics_process(delta):
 		queue_free()
 		emit_signal("done")  # Signal that the harpoon is done
 
+func removeHarpoononHit(body):
+	# Check if the harpoon hit a tile
+	if body.is_in_group("Tiles"):  # Ensure your tiles are in the "Tiles" group
+		queue_free()  # Destroy the harpoon after impact
+		emit_signal("done")  # Signal that the harpoon is done
+
+# Handle collision with bodies
 func _on_Area2D_body_entered(body):
-	# Handle collision with other objects
-	if body.is_in_group("fish"): 
-		body.queue_free()  # Destroy the hit object
 	queue_free()  # Destroy the harpoon after impact
 	emit_signal("done")  # Signal that the harpoon is done
+  
+func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	removeHarpoononHit(body)
