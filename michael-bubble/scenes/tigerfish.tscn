@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dwax6j27xftyy" path="res://assets/tigerfish.png" id="2_dwjts"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4u5j8"]
-size = Vector2(94, 22)
+size = Vector2(70, 22)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rvdih"]
 radius = 123.004
@@ -22,6 +22,7 @@ texture = ExtResource("2_dwjts")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_as_relative = false
+position = Vector2(-12, 0)
 shape = SubResource("RectangleShape2D_4u5j8")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -29,4 +30,23 @@ shape = SubResource("RectangleShape2D_4u5j8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_rvdih")
 
+[node name="KillPlayerZone" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KillPlayerZone"]
+position = Vector2(0.032176, 0.56875)
+scale = Vector2(0.997685, 0.96875)
+polygon = PackedVector2Array(23, -13, 48, -3, 49, 4, 26, 11, 22, 2, 22, -6)
+
+[node name="HarpoonKillZone" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HarpoonKillZone"]
+polygon = PackedVector2Array(11, 12, 49, 4, 47, -2, 22, -12, -2, -15, -12, -11, -37, -5, -36, 1, -17, 9)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="KillPlayerZone" to="." method="_on_kill_player_zone_body_entered"]
+[connection signal="area_entered" from="HarpoonKillZone" to="." method="_on_harpoon_kill_zone_area_entered"]
+[connection signal="body_entered" from="HarpoonKillZone" to="." method="_on_harpoon_kill_zone_body_entered"]

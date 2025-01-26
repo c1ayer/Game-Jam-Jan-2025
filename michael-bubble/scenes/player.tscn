@@ -63,31 +63,30 @@ radius = 70.0
 [node name="Player" type="Node2D"]
 position = Vector2(87, 64)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="PlayerBody" type="CharacterBody2D" parent="."]
 z_index = 2
 z_as_relative = false
-
 collision_layer = 10
 collision_mask = 10
-
 script = ExtResource("1_6wqe2")
 harpoon_scene = ExtResource("3_8hnll")
 
-[node name="Harpoon" parent="CharacterBody2D" instance=ExtResource("3_8hnll")]
+[node name="Harpoon" parent="PlayerBody" instance=ExtResource("3_8hnll")]
 position = Vector2(31, -29)
+script = null
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBody"]
 position = Vector2(27, 2)
 rotation = 1.53589
 shape = SubResource("CapsuleShape2D_qg0bh")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerBody"]
 position = Vector2(27, -4)
 scale = Vector2(0.166875, 0.166875)
 sprite_frames = SubResource("SpriteFrames_xr735")
 autoplay = "default"
 
-[node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D"]
+[node name="PointLight2D" type="PointLight2D" parent="PlayerBody"]
 position = Vector2(57, -7)
 scale = Vector2(2.36641, 2.36641)
 shadow_enabled = true
@@ -95,13 +94,13 @@ shadow_color = Color(0.0392157, 0.0392157, 0.0392157, 1)
 texture = ExtResource("11_8k1sc")
 texture_scale = 0.2
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="PlayerBody"]
 position = Vector2(56, -6)
 
-[node name="waterReflector" type="Area2D" parent="CharacterBody2D"]
+[node name="waterReflector" type="Area2D" parent="PlayerBody"]
 position = Vector2(39, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/waterReflector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBody/waterReflector"]
 shape = SubResource("CircleShape2D_scoex")
 
-[connection signal="body_entered" from="CharacterBody2D/waterReflector" to="CharacterBody2D" method="_on_water_reflector_body_entered"]
+[connection signal="body_entered" from="PlayerBody/waterReflector" to="PlayerBody" method="_on_water_reflector_body_entered"]
