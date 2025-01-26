@@ -9,7 +9,7 @@ var num_bubbles = 0
 signal increase_oxygen
 
 func _on_timer_timeout() -> void:
-	if (num_bubbles > MAX_NUM_BUBBLES) :
+	if (num_bubbles >= MAX_NUM_BUBBLES) :
 		return
 	var bub = bubble.instantiate()
 	var camera_position = get_viewport().get_camera_2d().get_screen_center_position()

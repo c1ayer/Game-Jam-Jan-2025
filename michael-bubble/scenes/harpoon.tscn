@@ -7,16 +7,20 @@
 size = Vector2(46.5, 13.75)
 
 [node name="Harpoon" type="Area2D"]
-position = Vector2(9, 13)
+
+position = Vector2(9, 14)
+collision_layer = 17
+collision_mask = 17
+
 script = ExtResource("1_rg4ca")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(55.5, 37.75)
+position = Vector2(24, 9.09495e-13)
 scale = Vector2(0.166667, 0.192308)
 texture = ExtResource("1_r44ug")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(54.75, 37.125)
+position = Vector2(22, 0)
 scale = Vector2(1, 1.04089)
 shape = SubResource("RectangleShape2D_vkbb1")
 
