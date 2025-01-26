@@ -30,7 +30,7 @@ expand_mode = 1
 
 [node name="Titlesong" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("3_1bfej")
-volume_db = -20.834
+volume_db = -25.786
 autoplay = true
 
 [node name="wave" type="TextureRect" parent="Control"]
