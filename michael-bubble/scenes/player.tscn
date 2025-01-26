@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://caa51017re5wo"]
 
-[ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="1_4o0gx"]
+[ext_resource type="Script" path="res://scripts/diver.gd" id="1_6wqe2"]
 [ext_resource type="Texture2D" uid="uid://cblqllw6w3y5n" path="res://assets/diver.png" id="2_ebe4k"]
 [ext_resource type="PackedScene" uid="uid://b1m18gkavx7s3" path="res://scenes/harpoon.tscn" id="3_8hnll"]
 
@@ -16,7 +16,7 @@ z_index = 2
 z_as_relative = false
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_4o0gx")
+script = ExtResource("1_6wqe2")
 harpoon_scene = ExtResource("3_8hnll")
 
 [node name="Harpoon" parent="CharacterBody2D" instance=ExtResource("3_8hnll")]
