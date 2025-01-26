@@ -48,3 +48,9 @@ func _physics_process(delta):
 func _input(event):
 	if event.is_action_pressed("shoot"):
 		shoot_harpoon()
+
+
+
+func _on_water_reflector_body_entered(body):
+	if body.has_method('NearPlayer'):
+		body.linear_velocity += velocity *.5
