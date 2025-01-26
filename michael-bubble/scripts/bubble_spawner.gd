@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var bubble = preload("res://scenes/bubble.tscn")
-@onready var screenSize = get_viewport().get_visible_rect().size
+@onready var screenSize = get_viewport().get_camera_2d()
 
 
 var MIN_BUBBLE_SCALE = 0.5
