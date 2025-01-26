@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://caa51017re5wo" path="res://scenes/player.tscn" id="3_8o8ob"]
 [ext_resource type="PackedScene" uid="uid://cqsxdd5gnrgrt" path="res://scenes/oxygen_bar.tscn" id="4_g3q1a"]
 [ext_resource type="PackedScene" uid="uid://ogmoyrrhwah" path="res://scenes/tigerfish.tscn" id="5_6oyh1"]
-[ext_resource type="Texture2D" uid="uid://0y7sgtf21f38" path="res://assets/ocean.PNG" id="6_fssi1"]
+[ext_resource type="PackedScene" uid="uid://c8voecujjmqx0" path="res://scenes/tile_map.tscn" id="6_552sb"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(0, -4)
@@ -30,13 +30,9 @@ position = Vector2(-1.51587, 12.7047)
 position = Vector2(579, 406)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-color = Color(0.0338533, 0.0338533, 0.0338533, 1)
+color = Color(0.00259022, 0.00256443, 0.263267, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(577.25, 332.25)
-scale = Vector2(4.71633, 6.20476)
-texture = ExtResource("6_fssi1")
+[node name="Level" parent="." instance=ExtResource("6_552sb")]
 
 [connection signal="oxygen_bar_increase" from="GameManager" to="GameManager/CanvasLayer/OxygenBar" method="_on_game_manager_oxygen_bar_increase"]
 [connection signal="increase_oxygen" from="GameManager/BubbleSpawner" to="GameManager" method="_on_bubble_spawner_increase_oxygen"]

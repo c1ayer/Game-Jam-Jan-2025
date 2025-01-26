@@ -38,3 +38,6 @@ shadow_enabled = true
 shadow_color = Color(0.0392157, 0.0392157, 0.0392157, 1)
 texture = ExtResource("4_qxxld")
 texture_scale = 0.2
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(56, -6)
