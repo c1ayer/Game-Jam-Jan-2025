@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed = 350  # Adjust for balance
 @export var rotation_speed = 4  # Adjust for balance
-@export var deceleration = 200  # Rate at which the velocity decreases
+@export var deceleration = 100  # Rate at which the velocity decreases
 @export var forward_multiplier = 1.2  # Speed multiplier for moving forward
 @export var backward_multiplier = 0.6  # Speed multiplier for moving backward
 @export var harpoon_scene: PackedScene  # Drag Harpoon.tscn here
