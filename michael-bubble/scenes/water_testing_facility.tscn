@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://rkn2k8tuy0jw"]
+[gd_scene load_steps=7 format=3 uid="uid://rkn2k8tuy0jw"]
 
 [ext_resource type="Script" path="res://scripts/water_testing_facility.gd" id="1_cwv0m"]
+[ext_resource type="PackedScene" uid="uid://caa51017re5wo" path="res://scenes/player.tscn" id="2_x7efo"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7m3gh"]
 distance = -650.0
@@ -14,11 +15,6 @@ distance = -1150.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p721h"]
 normal = Vector2(0, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtjia"]
-size = Vector2(283.5, 96.5)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_gceb2"]
 
 [node name="WaterTestingFacility" type="Node2D"]
 script = ExtResource("1_cwv0m")
@@ -43,13 +39,5 @@ shape = SubResource("WorldBoundaryShape2D_8mcpo")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
 shape = SubResource("WorldBoundaryShape2D_p721h")
 
-[node name="RandomObstacle" type="StaticBody2D" parent="."]
-position = Vector2(682, 510)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RandomObstacle"]
-shape = SubResource("RectangleShape2D_qtjia")
-
-[node name="Sprite2D" type="Sprite2D" parent="RandomObstacle"]
-position = Vector2(0.499997, 2.49998)
-scale = Vector2(285, 97)
-texture = SubResource("CanvasTexture_gceb2")
+[node name="Player" parent="." instance=ExtResource("2_x7efo")]
+position = Vector2(121, 493)

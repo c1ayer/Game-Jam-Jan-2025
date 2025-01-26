@@ -13,3 +13,6 @@ func _process(delta):
 	var collision_info = move_and_collide(linear_velocity * delta)
 	if collision_info and collision_info.get_normal().length() == 1:
 		linear_velocity = linear_velocity.bounce(collision_info.get_normal())*.5 #not sure how much energy lost in bounce
+		
+func NearPlayer():
+	pass

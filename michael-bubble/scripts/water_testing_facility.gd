@@ -1,6 +1,6 @@
 extends Node2D
 
-var number_of_water = 200
+var number_of_water = 300
 var pressureMult = 20000
 var targetDensity = .6
 var smoothingRadius = 50
@@ -31,11 +31,9 @@ func _ready():
 		active_water.position = Vector2(x,y)
 		active_water.waterNumber = i
 		positions[active_water.waterNumber] = active_water.position
-		if active_water.waterNumber == 120:
-			active_water.modulate =Color.GREEN
+		#if active_water.waterNumber == 120:
+			#active_water.modulate =Color.GREEN
 		
-	#CalculateDensity(Vector2(500,200))
-	#NeighborhoodLookup(Vector2(500,200))
 	UpdateSpacialIndices()
 
 
@@ -44,20 +42,20 @@ func _process(delta):
 	var damping = .999
 	for ichild in get_child_count():
 		var tmpChild = get_child(ichild)
-		if(tmpChild.is_class("RigidBody2D")): #should be more specific, like water.gd or has_method
+		if(tmpChild.has_method('NearPlayer')): #should be more specific, like water.gd or has_method
 			positions[tmpChild.waterNumber] = tmpChild.position + tmpChild.linear_velocity * delta * predictionFactor
 			var density = CalculateDensity(tmpChild.position)
 			densities[tmpChild.waterNumber] = density
-			if tmpChild.waterNumber == 120:
-				tmpChild.modulate = Color.GREEN
-			else:
-				tmpChild.modulate = Color.WHITE
-			for j in debuglist.size():
-				if tmpChild.waterNumber == debuglist[j]:
-					tmpChild.modulate = Color.RED
+			#if tmpChild.waterNumber == 120:
+				#tmpChild.modulate = Color.GREEN
+			#else:
+				#tmpChild.modulate = Color.WHITE
+			#for j in debuglist.size():
+				#if tmpChild.waterNumber == debuglist[j]:
+					#tmpChild.modulate = Color.RED
 	for ichild in get_child_count():
 		var tmpChild = get_child(ichild)
-		if(tmpChild.is_class("RigidBody2D")): #should be more specific, like water.gd or has_method
+		if(tmpChild.has_method('NearPlayer')): #should be more specific, like water.gd or has_method
 			var pressureForce = CalcPressureForce(tmpChild.position,tmpChild.waterNumber)
 			var pressureAcc = -pressureForce/densities[tmpChild.waterNumber]
 			tmpChild.linear_velocity = tmpChild.linear_velocity*damping
@@ -123,10 +121,8 @@ func CalcPressureForce(samplePos,tmpWaterNumber):
 			var neighborPos = positions[neighborWaterNumber]
 			var distance = (neighborPos - samplePos).length()
 			if(distance < smoothingRadius and distance > 0):
-				if tmpWaterNumber == 120:
-					debuglist.append(neighborWaterNumber)
-				#print(samplePos,' ',neighborPos)
-				#print(tmpWaterNumber,' ',neighborWaterNumber)
+				#if tmpWaterNumber == 120:
+					#debuglist.append(neighborWaterNumber)
 				var direction = (neighborPos - samplePos).normalized() #direction of particle
 				var slope = DensityDerivativeKernel(smoothingRadius,distance) # slope of density deriv (pressure slope)
 				var pressure = (densities[neighborWaterNumber] - targetDensity)* pressureMult #pressure at particle
@@ -152,7 +148,7 @@ func NeighborhoodLookup(position, neighbor):
 func UpdateSpacialIndices():
 	for ichild in get_child_count():
 		var tmpChild = get_child(ichild)
-		if(tmpChild.is_class("RigidBody2D")): #should be more specific, like water.gd or has_method
+		if(tmpChild.has_method('NearPlayer')): #should be more specific, like water.gd or has_method
 			var hash = NeighborhoodLookup(tmpChild.position,4)
 			var key = hash % number_of_water
 			spacialIndices[tmpChild.waterNumber] = Vector3(key,tmpChild.waterNumber,hash)
