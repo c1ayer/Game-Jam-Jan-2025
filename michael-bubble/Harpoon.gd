@@ -30,15 +30,8 @@ func removeHarpoononHit(body):
 
 # Handle collision with bodies
 func _on_Area2D_body_entered(body):
-	if body.is_in_group("fish"):  # Handle fish collision
-		body.queue_free()  # Destroy the hit fish
-	else:
-		# Destroy the harpoon on other collisions
-		queue_free()  
-		emit_signal("done")
-
-
-
-
+	queue_free()  # Destroy the harpoon after impact
+	emit_signal("done")  # Signal that the harpoon is done
+  
 func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	removeHarpoononHit(body)
