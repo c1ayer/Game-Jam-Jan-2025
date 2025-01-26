@@ -46,5 +46,5 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _input(event):
-	if event.is_action_pressed("shoot"):  # Bind this action in the Input Map
+	if event.is_action_pressed("shoot"):
 		shoot_harpoon()
