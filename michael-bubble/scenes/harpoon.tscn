@@ -23,3 +23,5 @@ scale = Vector2(1, 1.04089)
 shape = SubResource("RectangleShape2D_vkbb1")
 
 [node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
