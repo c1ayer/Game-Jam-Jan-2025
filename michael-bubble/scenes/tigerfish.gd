@@ -8,9 +8,10 @@ signal hurt_player
 var aggro = false
 
 func _physics_process(delta: float) -> void:
-	if aggro:
+	if aggro == true:
 		var direction = global_position.direction_to(player.global_position)
 		velocity = direction * 200.0
+		rotation = direction.angle()
 		move_and_slide()
 	
 
