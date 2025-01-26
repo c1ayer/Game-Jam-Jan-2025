@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxjj3qdp5yhb6"]
+
+[ext_resource type="Script" path="res://scripts/TheEnd.gd" id="1_rm11r"]
+[ext_resource type="Texture2D" uid="uid://bmdbew36xan6r" path="res://assets/theEnd.png" id="2_7scon"]
+[ext_resource type="Texture2D" uid="uid://ccqlcgeq3exkj" path="res://assets/endText1.png" id="3_gcbra"]
+[ext_resource type="Texture2D" uid="uid://dgcybe3vuyjyi" path="res://assets/endText2.png" id="4_3ee2p"]
+[ext_resource type="AudioStream" uid="uid://br6h8w1g02tv0" path="res://assets/wooshybubbly.mp3" id="5_nb3gr"]
+
+[node name="TheEnd" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_rm11r")
+
+[node name="bkg" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7scon")
+expand_mode = 1
+
+[node name="text1" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -448.0
+offset_top = -325.0
+offset_right = 611.0
+offset_bottom = 1147.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.425, 0.425)
+texture = ExtResource("3_gcbra")
+
+[node name="text2" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -417.0
+offset_top = -573.0
+offset_right = 642.0
+offset_bottom = 899.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("4_3ee2p")
+
+[node name="Wooshybubbly" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("5_nb3gr")
+volume_db = -10.306
+pitch_scale = 0.76
+autoplay = true
+parameters/looping = true
+
+[node name="Timer" type="Timer" parent="Control"]
+wait_time = 5.255
+autostart = true
+
+[connection signal="timeout" from="Control/Timer" to="Control" method="_on_timer_timeout"]

@@ -1,13 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdc22ae7tv8cx"]
+[gd_scene load_steps=9 format=3 uid="uid://bdc22ae7tv8cx"]
 
 [ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_a48vf"]
 [ext_resource type="Texture2D" uid="uid://c0sgr4y0pcsbn" path="res://assets/titlescreen-bkg3.png" id="1_s2cpl"]
 [ext_resource type="Texture2D" uid="uid://0lljfjqqyyv2" path="res://assets/titlescreen-wave.png" id="2_eel0i"]
+[ext_resource type="AudioStream" uid="uid://i8dh7wn1qgpa" path="res://assets/titlesong.mp3" id="3_1bfej"]
 [ext_resource type="Texture2D" uid="uid://c6hgl15wbxie3" path="res://assets/titlescreen-diver.png" id="3_locgs"]
 [ext_resource type="Texture2D" uid="uid://but8fl0bc1gie" path="res://assets/titlescreen-btn.png" id="4_mbym5"]
 [ext_resource type="Texture2D" uid="uid://cl5xhn1rjd2h6" path="res://assets/titlescreen-btnhvr.png" id="5_yyl7g"]
 [ext_resource type="AudioStream" uid="uid://br6h8w1g02tv0" path="res://assets/wooshybubbly.mp3" id="7_tcuf6"]
-
 
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource("1_a48vf")
@@ -27,6 +27,11 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_s2cpl")
 expand_mode = 1
+
+[node name="Titlesong" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("3_1bfej")
+volume_db = -25.786
+autoplay = true
 
 [node name="wave" type="TextureRect" parent="Control"]
 layout_mode = 1
