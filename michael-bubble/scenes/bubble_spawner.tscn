@@ -6,7 +6,6 @@
 script = ExtResource("1_ks4ad")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
 autostart = true
 
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
