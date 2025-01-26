@@ -1,18 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://ogmoyrrhwah"]
 
-[ext_resource type="Script" path="res://scripts/tigerfish.gd" id="1_bq8ct"]
+[ext_resource type="Script" path="res://scenes/tigerfish.gd" id="1_uju14"]
 [ext_resource type="Texture2D" uid="uid://dwax6j27xftyy" path="res://assets/tigerfish.png" id="2_dwjts"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6c6p"]
-size = Vector2(280, 96)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4u5j8"]
+size = Vector2(278, 46)
 
-[node name="Area2D" type="Area2D"]
-script = ExtResource("1_bq8ct")
+[node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = 2
+z_as_relative = false
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_uju14")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_dwjts")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_x6c6p")
-
-[node name="Timer" type="Timer" parent="."]
+z_as_relative = false
+shape = SubResource("RectangleShape2D_4u5j8")
