@@ -16,6 +16,7 @@ func _on_bubble_spawner_increase_oxygen() -> void:
 	emit_signal("oxygen_bar_increase")
 
 func _on_oxygen_bar_oxygen_death() -> void:
+	Engine.time_scale = 0.2
 	var screen = death_screen.instantiate()
 	screen.connect("button_pressed", _restart_game)
 	add_child(screen)
