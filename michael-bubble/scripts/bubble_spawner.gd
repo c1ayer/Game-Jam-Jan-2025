@@ -7,10 +7,7 @@ extends Node2D
 var MIN_BUBBLE_SCALE = 0.5
 var MAX_BUBBLE_SCALE = 2
 var MAX_NUM_BUBBLES = 10
-
 var num_bubbles = 0
-
-
 signal increase_oxygen
 
 func _on_timer_timeout() -> void:
@@ -27,7 +24,7 @@ func _on_timer_timeout() -> void:
 	add_child(bub)
 
 
-func _on_child_exiting_tree(node: Node) -> void:
+func _on_child_exiting_tree(_node: Node) -> void:
 	#if Bubble is removed we decrease active bubble count
 	num_bubbles -= 1
 	
