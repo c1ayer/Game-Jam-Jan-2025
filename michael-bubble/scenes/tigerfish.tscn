@@ -1,13 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ogmoyrrhwah"]
+[gd_scene load_steps=4 format=3 uid="uid://ogmoyrrhwah"]
 
 [ext_resource type="Script" path="res://scenes/tigerfish.gd" id="1_uju14"]
 [ext_resource type="Texture2D" uid="uid://dwax6j27xftyy" path="res://assets/tigerfish.png" id="2_dwjts"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4u5j8"]
 size = Vector2(278, 46)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_816qg"]
-polygon = PackedVector2Array(-141, -48, -106, -19, -39, -36, -52, -52, -3, -45, 65, -33, 143, -5, 140, 13, 83, 33, 74, 26, 64, 46, 38, 48, 43, 37, 34, 33, -2, 36, -11, 50, -37, 50, -50, 46, -34, 30, -58, 24, -84, 47, -105, 41, -88, 28, -80, 12, -107, 5, -123, 28, -138, 30, -149, 21, -130, 4, -119, -11, -140, -24)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 z_index = 2
@@ -22,7 +19,3 @@ texture = ExtResource("2_dwjts")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_as_relative = false
 shape = SubResource("RectangleShape2D_4u5j8")
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-visible = false
-occluder = SubResource("OccluderPolygon2D_816qg")
