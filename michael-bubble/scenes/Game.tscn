@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_hm51x"]
 [ext_resource type="PackedScene" uid="uid://dc26m67p27iqs" path="res://scenes/bubble_spawner.tscn" id="2_o7f3j"]
 [ext_resource type="PackedScene" uid="uid://caa51017re5wo" path="res://scenes/player.tscn" id="3_8o8ob"]
+[ext_resource type="PackedScene" uid="uid://b8b2x1xy4paxw" path="res://scenes/fish_spawner.tscn" id="4_ai11x"]
 [ext_resource type="PackedScene" uid="uid://cqsxdd5gnrgrt" path="res://scenes/oxygen_bar.tscn" id="4_g3q1a"]
-[ext_resource type="PackedScene" uid="uid://ogmoyrrhwah" path="res://scenes/tigerfish.tscn" id="5_6oyh1"]
 [ext_resource type="PackedScene" uid="uid://c8voecujjmqx0" path="res://scenes/tile_map.tscn" id="6_552sb"]
 [ext_resource type="AudioStream" uid="uid://bf0kawms2fpbf" path="res://assets/bubbledemo.mp3" id="7_iage2"]
 
@@ -23,12 +23,11 @@ visibility_layer = 2
 
 [node name="BubbleSpawner" parent="GameManager" instance=ExtResource("2_o7f3j")]
 
+[node name="fish_spawner" parent="GameManager" instance=ExtResource("4_ai11x")]
+
 [node name="Player" parent="." instance=ExtResource("3_8o8ob")]
 z_index = 5
 position = Vector2(-1.51587, 12.7047)
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("5_6oyh1")]
-position = Vector2(866, 448)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.00259022, 0.00256443, 0.263267, 1)
@@ -41,6 +40,8 @@ volume_db = -35.604
 autoplay = true
 parameters/looping = true
 
+[connection signal="oxygen_bar_decrease" from="GameManager" to="GameManager/CanvasLayer/OxygenBar" method="_on_game_manager_oxygen_bar_decrease"]
 [connection signal="oxygen_bar_increase" from="GameManager" to="GameManager/CanvasLayer/OxygenBar" method="_on_game_manager_oxygen_bar_increase"]
 [connection signal="oxygen_death" from="GameManager/CanvasLayer/OxygenBar" to="GameManager" method="_on_oxygen_bar_oxygen_death"]
 [connection signal="increase_oxygen" from="GameManager/BubbleSpawner" to="GameManager" method="_on_bubble_spawner_increase_oxygen"]
+[connection signal="decrease_oxygen_signal" from="GameManager/fish_spawner" to="GameManager" method="_on_fish_spawner_decrease_oxygen_signal"]

@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed = 750  # Speed of the harpoon
+@export var speed = 1200  # Speed of the harpoon
 @export var max_distance = 1000  # Maximum range of the harpoon
 var traveled_distance = 0  # Tracks how far the harpoon has traveled
 

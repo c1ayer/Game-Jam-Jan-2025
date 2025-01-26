@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
 @export var speed = 300  # Adjust for balance
-@export var rotation_speed = 3.5  # Adjust for balance
+@export var rotation_speed = 4  # Adjust for balance
 @export var deceleration = 200  # Rate at which the velocity decreases
 @export var forward_multiplier = 1.2  # Speed multiplier for moving forward
 @export var backward_multiplier = 0.6  # Speed multiplier for moving backward
 @export var harpoon_scene: PackedScene  # Drag Harpoon.tscn here
 @export var harpoon_offset = 50  # Distance in front of the diver to spawn the harpoon
-@export var harpoon_cooldown = .5  # Cooldown time in seconds
+@export var harpoon_cooldown = .25  # Cooldown time in seconds
 
 var rotation_direction = 0
 var can_shoot = true  # Flag to track whether the harpoon can be fired
@@ -63,3 +63,8 @@ func _physics_process(delta):
 func _input(event):
 	if event.is_action_pressed("shoot"):  # Bind this action in the Input Map
 		shoot_harpoon()
+		
+		
+func _on_water_reflector_body_entered(body):
+	if body.has_method('NearPlayer'):
+		body.linear_velocity += velocity *.5
