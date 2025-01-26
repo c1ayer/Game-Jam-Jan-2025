@@ -38,3 +38,9 @@ func _on_Area2D_body_entered(body):
 		# Destroy the harpoon on other collisions
 		queue_free()  
 		emit_signal("done")
+
+
+
+
+func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	removeHarpoononHit(body)
