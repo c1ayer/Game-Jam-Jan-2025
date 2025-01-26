@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/death_screen_overlay.gd" id="1_iaxvd"]
 
 [node name="Death Screen Overlay" type="Node2D"]
+z_index = 4
 position = Vector2(600, 325)
 script = ExtResource("1_iaxvd")
 
