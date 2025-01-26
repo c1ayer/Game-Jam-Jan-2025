@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk6xy0ry88cq8"]
+
+[ext_resource type="PackedScene" uid="uid://c8voecujjmqx0" path="res://scenes/tile_map.tscn" id="1_0msr7"]
+
+[node name="level 2 node" type="Node2D"]
+position = Vector2(-171, -599)
+
+[node name="level 2" parent="." instance=ExtResource("1_0msr7")]
