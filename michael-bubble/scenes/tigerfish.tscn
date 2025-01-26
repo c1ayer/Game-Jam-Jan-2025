@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://ogmoyrrhwah"]
+[gd_scene load_steps=5 format=3 uid="uid://ogmoyrrhwah"]
 
 [ext_resource type="Script" path="res://scenes/tigerfish.gd" id="1_uju14"]
 [ext_resource type="Texture2D" uid="uid://dwax6j27xftyy" path="res://assets/tigerfish.png" id="2_dwjts"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4u5j8"]
-size = Vector2(278, 46)
+size = Vector2(94, 22)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rvdih"]
+radius = 123.004
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 z_index = 2
@@ -14,8 +17,16 @@ collision_mask = 2
 script = ExtResource("1_uju14")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.34, 0.352)
 texture = ExtResource("2_dwjts")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_as_relative = false
 shape = SubResource("RectangleShape2D_4u5j8")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_rvdih")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

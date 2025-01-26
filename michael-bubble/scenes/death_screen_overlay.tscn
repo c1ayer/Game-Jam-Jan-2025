@@ -20,6 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 text = "You Died!"
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="."]
 anchors_preset = 7
@@ -34,5 +35,6 @@ offset_bottom = 78.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Restart"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
