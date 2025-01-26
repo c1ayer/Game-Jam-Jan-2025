@@ -27,7 +27,7 @@ z_index = 5
 position = Vector2(-1.51587, 12.7047)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("5_6oyh1")]
-position = Vector2(579, 406)
+position = Vector2(866, 448)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.00259022, 0.00256443, 0.263267, 1)
