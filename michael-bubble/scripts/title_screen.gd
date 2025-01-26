@@ -33,12 +33,12 @@ func _process(delta):
 			if wave.position.x > recede.x:
 				wave.position += Vector2(-5, 4) * (80 + abs(wave.position.distance_to(start_pos))) / 400
 			else:
-				is_recede = 0
+				is_recede = false
 		false:
 			if wave.position.x < start_pos.x:
 				wave.position -= Vector2(-5, 4) * (80 + abs(wave.position.distance_to(start_pos))) / 400
 			else:
-				is_recede = 1
+				is_recede = true
 	if is_fade_out:
 		if fade.color.a < 1.5:
 			fade.color.a += 0.01
