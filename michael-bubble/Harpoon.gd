@@ -24,7 +24,7 @@ func _physics_process(delta):
 
 func _on_Area2D_body_entered(body):
 	# Handle collision with other objects
-	if body.is_in_group("mobs"):  # Adjust this to fit your group names
+	if body.is_in_group("fish"): 
 		body.queue_free()  # Destroy the hit object
 	queue_free()  # Destroy the harpoon after impact
 	emit_signal("done")  # Signal that the harpoon is done
