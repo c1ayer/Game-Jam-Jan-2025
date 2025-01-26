@@ -10,12 +10,13 @@ var spacialOffsets = []
 var spacialIndices = []
 var debuglist = []
 var predictionFactor = .01
+var camera_position = Vector2(0,0)
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var rowsize = 40
-	var spacing = 25
+	var rowsize = 20
+	var spacing = 35
 	var water_scene = preload("res://scenes/water.tscn")
 	densities.resize(number_of_water)
 	positions.resize(number_of_water)
@@ -26,8 +27,8 @@ func _ready():
 		#add a bunch of water particles
 		var active_water = water_scene.instantiate()
 		add_child(active_water)
-		var x = (i % rowsize + 1) * spacing
-		var y = ((i-i%rowsize)/rowsize + 1) * spacing
+		var x = (i % rowsize + 3) * spacing
+		var y = ((i-i%rowsize)/rowsize + 3) * spacing
 		active_water.position = Vector2(x,y)
 		active_water.waterNumber = i
 		positions[active_water.waterNumber] = active_water.position
@@ -40,6 +41,15 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var damping = .999
+	#var camera = get_viewport().get_camera_2d()
+	#if camera != null:
+		#camera_position = camera.get_screen_center_position()
+	#camera_position += Vector2(1,0)*delta*50
+	#$BottomWall.position = camera_position - Vector2(575,325)/2
+	#$LeftWall.position = camera_position - Vector2(575,325)/2
+	#$RightWall.position = camera_position - Vector2(575,325)/2
+	#$TopWall.position = camera_position - Vector2(575,325)/2
+	
 	for ichild in get_child_count():
 		var tmpChild = get_child(ichild)
 		if(tmpChild.has_method('NearPlayer')): #should be more specific, like water.gd or has_method
@@ -64,6 +74,7 @@ func _process(delta):
 	UpdateSpacialIndices()
 	#print(spacialIndices,spacialOffsets)
 	#print(densities,positions)
+	
 
 func DensityKernel(radius,distance):
 	var volume = PI * radius**4 /6
