@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by2ls7jaxl62u"
-path="res://.godot/imported/tilesprites.png-1694ab0978f41f7b280891a52c7deb2b.ctex"
+uid="uid://bs2fhoabnoqba"
+path="res://.godot/imported/background.jpg-3c1ee7bbff6a1283595ccc69bb1d6acd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesprites.png"
-dest_files=["res://.godot/imported/tilesprites.png-1694ab0978f41f7b280891a52c7deb2b.ctex"]
+source_file="res://assets/background.jpg"
+dest_files=["res://.godot/imported/background.jpg-3c1ee7bbff6a1283595ccc69bb1d6acd.ctex"]
 
 [params]
 
