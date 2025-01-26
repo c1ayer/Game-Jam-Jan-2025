@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@export var speed = 300  # Adjust for balance
-@export var rotation_speed = 3  # Adjust for balance
+@export var speed = 350  # Adjust for balance
+@export var rotation_speed = 4  # Adjust for balance
 @export var deceleration = 200  # Rate at which the velocity decreases
 @export var forward_multiplier = 1.2  # Speed multiplier for moving forward
 @export var backward_multiplier = 0.6  # Speed multiplier for moving backward
@@ -46,5 +46,5 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _input(event):
-	if event.is_action_pressed("shoot"):  # Bind this action in the Input Map
+	if event.is_action_pressed("shoot"):
 		shoot_harpoon()
