@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://rkn2k8tuy0jw"]
+[gd_scene load_steps=8 format=3 uid="uid://rkn2k8tuy0jw"]
 
 [ext_resource type="Script" path="res://scripts/water_testing_facility.gd" id="1_cwv0m"]
-[ext_resource type="PackedScene" uid="uid://dntvlhkw1cvdy" path="res://scenes/water.tscn" id="1_lrp3d"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7m3gh"]
 distance = -650.0
@@ -38,12 +37,6 @@ shape = SubResource("WorldBoundaryShape2D_t14l5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
 shape = SubResource("WorldBoundaryShape2D_8mcpo")
-
-[node name="Water" parent="." instance=ExtResource("1_lrp3d")]
-position = Vector2(920, 374)
-
-[node name="Water2" parent="." instance=ExtResource("1_lrp3d")]
-position = Vector2(1030, 193)
 
 [node name="TopWall" type="StaticBody2D" parent="."]
 
