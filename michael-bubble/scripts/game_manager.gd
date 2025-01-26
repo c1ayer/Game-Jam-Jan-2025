@@ -27,6 +27,7 @@ func _on_bubble_spawner_increase_oxygen() -> void:
 func _on_oxygen_bar_oxygen_death() -> void:
 	if (death_occurred) :
 		return
+	$DeathScream.play()
 	Engine.time_scale = 0.2
 	#var screen = death_screen.instantiate()
 	#screen.position = get_viewport().get_camera_2d().get_screen_center_position()

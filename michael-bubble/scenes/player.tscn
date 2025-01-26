@@ -101,6 +101,7 @@ position = Vector2(39, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBody/waterReflector"]
 position = Vector2(3, 3)
+
 shape = SubResource("CircleShape2D_scoex")
 
 [connection signal="body_entered" from="PlayerBody/waterReflector" to="PlayerBody" method="_on_water_reflector_body_entered"]
