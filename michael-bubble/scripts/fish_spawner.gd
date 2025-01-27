@@ -47,6 +47,9 @@ func _ready() -> void:
 	_spawn_fish(3951,-1552)
 	_spawn_fish(4394,-1078)
 	_spawn_fish(3507, -876)
+	_spawn_fish(3507,-876)
+	_spawn_fish(5196,-1813)
+	_spawn_fish(10634,-4889)
 
 	
 func _spawn_fish(x, y):
