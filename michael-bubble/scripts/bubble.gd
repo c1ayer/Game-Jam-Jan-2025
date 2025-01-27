@@ -3,7 +3,7 @@ extends RigidBody2D
 signal player_popped
 
 func _process(delta: float) -> void:
-	if position.y < -2500:
+	if position.y < -5000:
 		queue_free()
 
 
