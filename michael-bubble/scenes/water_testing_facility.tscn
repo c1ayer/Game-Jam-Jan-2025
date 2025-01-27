@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://rkn2k8tuy0jw"]
+[gd_scene load_steps=8 format=3 uid="uid://rkn2k8tuy0jw"]
 
 [ext_resource type="Script" path="res://scripts/water_testing_facility.gd" id="1_cwv0m"]
 [ext_resource type="PackedScene" uid="uid://caa51017re5wo" path="res://scenes/player.tscn" id="2_x7efo"]
+[ext_resource type="AudioStream" uid="uid://b30jokcrestla" path="res://assets/Evil_dance_music.mp3" id="3_7x46d"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7m3gh"]
 distance = -650.0
@@ -20,24 +21,56 @@ normal = Vector2(0, 1)
 script = ExtResource("1_cwv0m")
 
 [node name="BottomWall" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWall"]
 shape = SubResource("WorldBoundaryShape2D_7m3gh")
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
 shape = SubResource("WorldBoundaryShape2D_t14l5")
 
 [node name="RightWall" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
 shape = SubResource("WorldBoundaryShape2D_8mcpo")
 
 [node name="TopWall" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
 shape = SubResource("WorldBoundaryShape2D_p721h")
 
 [node name="Player" parent="." instance=ExtResource("2_x7efo")]
 position = Vector2(121, 493)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7x46d")
+autoplay = true
+parameters/looping = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 767.0
+offset_top = 164.0
+offset_right = 927.0
+offset_bottom = 343.0
+text = "Game Developed By:
+
+StoPlains
+YeetSneezus
+Clayer1
+Evilollie
+Brokmech"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

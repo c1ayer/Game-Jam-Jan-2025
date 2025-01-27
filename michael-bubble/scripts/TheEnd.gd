@@ -26,4 +26,4 @@ func _on_timer_timeout():
 			timeouts += 1
 			text2.visible = true
 		2:
-			get_tree().change_scene_to_file("res://scenes/title_screen.tscn")
+			get_tree().change_scene_to_file("res://scenes/water_testing_facility.tscn")

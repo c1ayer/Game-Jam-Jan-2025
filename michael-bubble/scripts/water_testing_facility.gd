@@ -64,6 +64,8 @@ func _process(delta):
 	UpdateSpacialIndices()
 	#print(spacialIndices,spacialOffsets)
 	#print(densities,positions)
+	if Input.is_key_pressed(KEY_ESCAPE):
+		get_tree().change_scene_to_file("res://scenes/title_screen.tscn")
 
 func DensityKernel(radius,distance):
 	var volume = PI * radius**4 /6
@@ -169,3 +171,8 @@ func UpdateSpacialIndices():
 # Optimise so I can run more particles
 # Add viscosity 
 # figure out perfect constants: pressure mult, smoothing radius, gravity, target density, size of water, # of water
+
+
+func _on_timer_timeout():
+	get_tree().change_scene_to_file("res://scenes/title_screen.tscn")
+	
