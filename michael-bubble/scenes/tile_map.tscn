@@ -155,7 +155,7 @@ physics_layer_0/collision_mask = 258
 sources/0 = SubResource("TileSetAtlasSource_yvv81")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6wi0"]
-size = Vector2(1988, 442)
+size = Vector2(1116, 442)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_0xmnm")
@@ -173,7 +173,7 @@ collision_layer = 11
 collision_mask = 11
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-472, 5)
+position = Vector2(-36, 5)
 shape = SubResource("RectangleShape2D_w6wi0")
 
 [node name="Marker2D" type="Marker2D" parent="."]
