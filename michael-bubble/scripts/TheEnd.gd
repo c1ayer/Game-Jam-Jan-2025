@@ -23,7 +23,6 @@ func _on_timer_timeout():
 			timer.wait_time = 7
 			timeouts += 1
 			text1.visible = true
-			
 		1:
 			timeouts += 1
 			text2.visible = true
